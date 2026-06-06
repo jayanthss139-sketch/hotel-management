@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Hotel Management System</h1>
+    <p>Manage hotels, rooms, and reservations from one simple interface.</p>
+  </header>
+  <main>
+    <section class="panel" id="hotel-panel">
+      <h2>Hotels</h2>
+      <form id="hotel-form">
+        <input type="text" id="hotel-name" placeholder="Hotel name" required />
+        <input type="text" id="hotel-address" placeholder="Address" />
+        <input type="text" id="hotel-city" placeholder="City" />
+        <input type="text" id="hotel-phone" placeholder="Phone" />
+        <input type="text" id="hotel-description" placeholder="Description" />
+        <button type="submit">Add Hotel</button>
+      </form>
+      <div id="hotels-list"></div>
+    </section>
+
+    <section class="panel" id="room-panel">
+      <h2>Rooms</h2>
+      <div id="room-header">Select a hotel to manage rooms.</div>
+      <form id="room-form" class="hidden">
+        <input type="text" id="room-number" placeholder="Room number" required />
+        <input type="text" id="room-type" placeholder="Room type" />
+        <input type="number" id="room-price" placeholder="Price per night" min="0" step="0.01" />
+        <button type="submit">Add Room</button>
+      </form>
+      <div id="rooms-list"></div>
+    </section>
+
+    <section class="panel" id="reservation-panel">
+      <h2>Reservations</h2>
+      <form id="reservation-form">
+        <select id="reservation-hotel" required>
+          <option value="">Choose hotel</option>
+        </select>
+        <select id="reservation-room" required>
+          <option value="">Choose room</option>
+        </select>
+        <input type="text" id="guest-name" placeholder="Guest name" required />
+        <input type="email" id="guest-email" placeholder="Guest email" />
+        <label>Check-in</label>
+        <input type="date" id="check-in" required />
+        <label>Check-out</label>
+        <input type="date" id="check-out" required />
+        <button type="submit">Create Reservation</button>
+      </form>
+      <div id="reservations-list"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
